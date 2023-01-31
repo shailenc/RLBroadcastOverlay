@@ -1,7 +1,11 @@
 <script>
 
-    export let game = {};
-    $: console.log(game);
+    export let game = {
+        teams: [
+            {name: "sampleteam1", score: 69},
+            {name: "sampleteam2", score: 4},
+        ]
+    };
 
 </script>
 
