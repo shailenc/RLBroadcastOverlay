@@ -14,6 +14,8 @@
 
     <h1>ooga</h1>
 
+    <div class="swagbg"></div>
+
     <div id="playerCard">
         {#if $targetPlayer?.name}
             <CurrentPlayercard player={$targetPlayer} />
@@ -29,7 +31,7 @@
             {#if $playersInfo && $playersInfo.blue && $playersInfo.blue.length > 0}
                 {#each $playersInfo.blue as player}
                     <div class="playerslide">
-                        <PlayerBoostBar boost={player.boost} name={player.name} isTarget={player.id == $targetPlayer.id}/>
+                        <PlayerBoostBar boost={player.boost} name={player.name} isTarget={player.id == $targetPlayer.id} team={"blue"}/>
                     </div>
                 {/each}
             {/if}
@@ -39,7 +41,7 @@
             {#if $playersInfo && $playersInfo.orange && $playersInfo.orange.length > 0}
                 {#each $playersInfo.orange as player}
                     <div class="playerslide">
-                        <PlayerBoostBar boost={player.boost} name={player.name} isTarget={player.id == $targetPlayer.id}/>
+                        <PlayerBoostBar boost={player.boost} name={player.name} isTarget={player.id == $targetPlayer.id} team={"orange"}/>
                     </div>
                 {/each}
             {/if}
@@ -69,10 +71,10 @@
 
     #teamboosts {
         position: absolute;
-        top: 0;
+        top: 5px;
         left: 0;
         width: 1920px;
-        height: 150px;
+        height: 135px;
     }
 
     #teamboosts .blue, #teamboosts .orange {
@@ -83,11 +85,13 @@
     }
 
     #teamboosts .blue {
-        left: 0;
+        left: 5px;
+        text-align: left;
     }
 
     #teamboosts .orange {
-        right: 0;
+        right: 5px;
+        text-align: right;
     }
 
     .playerslide {
@@ -99,4 +103,16 @@
         font-weight: bold;
         text-transform: uppercase;
     }
+
+    .swagbg {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        z-index: -10;
+        left: 0;
+        top: 0;
+        /* background-image: url("https://pbs.twimg.com/ext_tw_video_thumb/1586753786042793987/pu/img/sBBwCOijoDCLRvqh.jpg"); */
+        background-size: 100% 100%;
+    }
+
 </style>
