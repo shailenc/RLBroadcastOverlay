@@ -14,7 +14,7 @@
     </div>
 
     <div class="boost"></div>
-    <div class="boost fill" style="width: {boost}%;"></div>
+    <div class="boost fill" style="width: {boost*92/100}%;"></div>
 </div>
 
 <style>
@@ -25,12 +25,12 @@
         border-radius: 5px;
 
         background: rgb(23,25,31);
-        background: linear-gradient(90deg, rgba(23,25,31,1) 44%, rgba(30,32,39,1) 93%, rgba(34,37,44,1) 100%);
+        background: linear-gradient(90deg, rgba(25,27,33,1) 44%, rgba(32,34,41,1) 93%, rgba(36,39,46,1) 100%);
         outline:3px solid rgb(5 5 5 / 0.1);
     }
 
     .container.target {
-        outline: 3px solid rgba(48, 46, 60, 0.5);
+        outline: 1px groove rgba(148, 146, 160, 0.15);
     }
 
     /* .container.blue {
@@ -51,7 +51,7 @@
         left: 4%;
         background-color: rgba(40 40 40 / 0.8);
 
-        transition: all ease 0.3;
+        transition: all ease 0.2s;
     }
 
     .blue .boost.fill {
@@ -73,15 +73,13 @@
     .name {
         margin: 0 auto;
         width: 92%;
-        color: rgb(250 250 250 / 0.5);
-
+        color: rgb(250 250 250 / 0.7);
         transition: all 0.3 ease;
     }
 
     .target .name {
         color: rgb(250 250 250 / 1);
         transition: all 0.3 ease;
-
     }
 
 </style>
