@@ -18,11 +18,12 @@
 </div>
 
 <style>
-
+    
     .container {
+        position: relative;
         height: 85%;
         width: 100%;
-        border-radius: 5px;
+        border-radius: 2px;
 
         background: rgb(23,25,31);
         background: linear-gradient(90deg, rgba(25,27,33,1) 44%, rgba(32,34,41,1) 93%, rgba(36,39,46,1) 100%);
@@ -32,16 +33,6 @@
     .container.target {
         outline: 1px groove rgba(148, 146, 160, 0.15);
     }
-
-    /* .container.blue {
-        background: rgb(38,69,171);
-        background: linear-gradient(100deg, rgba(38,69,171,1) 0%, rgba(32,79,169,1) 60%, rgb(75, 93, 164) 100%); 
-    }
-
-    .container.orange {
-        background: rgb(171,80,38);
-        background: linear-gradient(260deg, rgba(171,80,38,1) 0%, rgba(165,79,22,1) 64%, rgba(197,152,54,1) 100%); 
-    } */
 
     .boost {
         position: absolute;

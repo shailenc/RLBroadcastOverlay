@@ -62,10 +62,10 @@
 
     #scoreboard {
         position: absolute;
-        width: 1250px;
-        height: 80px;
-        top: 10px;
-        left: 335px;
+        width: 900px;
+        height: 70px;
+        top: 0px;
+        left: 510px;
 
     }
 
@@ -111,7 +111,7 @@
         z-index: -10;
         left: 0;
         top: 0;
-        background-image: url("https://pbs.twimg.com/ext_tw_video_thumb/1586753786042793987/pu/img/sBBwCOijoDCLRvqh.jpg");
+        /* background-image: url("https://pbs.twimg.com/ext_tw_video_thumb/1586753786042793987/pu/img/sBBwCOijoDCLRvqh.jpg"); */
         background-size: 100% 100%;
     }
 
