@@ -2,7 +2,7 @@
     // import Boost from "./lib/Boost.svelte";
     import CurrentPlayercard from "./lib/CurrentPlayercard.svelte";
     import Scoreboard from "./lib/Scoreboard.svelte";
-    import { targetPlayer, scoreboardInfo, playersInfo } from "./lib/processor";
+    import { targetPlayer, scoreboardInfo, playersInfo, teamShots, goalScored } from "./lib/processor";
     import { socketMessageStore } from "./lib/socket";
     import PlayerBoostBar from "./lib/PlayerBoostBar.svelte";
 
@@ -23,7 +23,7 @@
     </div>
 
     <div id="scoreboard">
-        <Scoreboard game={$scoreboardInfo} />
+        <Scoreboard game={$scoreboardInfo} teamShots={$teamShots} goalScored={$goalScored}/>
     </div>
 
     <div id="teamboosts">

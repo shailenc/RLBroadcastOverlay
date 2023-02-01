@@ -28,10 +28,19 @@
         background: rgb(23,25,31);
         background: linear-gradient(90deg, rgba(25,27,33,1) 44%, rgba(32,34,41,1) 93%, rgba(36,39,46,1) 100%);
         outline:3px solid rgb(5 5 5 / 0.1);
+
+        box-shadow: 0px 0px 0px 0px rgb(55, 153, 239);
+        transition: box-shadow 0.5s ease;
     }
 
-    .container.target {
+    .container.target.blue {
         outline: 1px groove rgba(148, 146, 160, 0.15);
+        box-shadow: 10px 0px 0px 0px rgb(55, 153, 239);
+    }
+
+    .container.target.orange {
+        outline: 1px groove rgba(148, 146, 160, 0.15);
+        box-shadow: -10px 0px 0px 0px rgb(239, 135, 55);
     }
 
     .boost {
@@ -46,11 +55,11 @@
     }
 
     .blue .boost.fill {
-        background-color: rgba(69, 88, 230, 0.5);
+        background-color: rgba(56, 118, 225, 0.7);
     }
 
     .orange .boost.fill {
-        background-color: rgba(255, 102, 0, 0.5);
+        background-color: rgba(255, 102, 0, 0.7);
     }
 
     .target .boost.fill {

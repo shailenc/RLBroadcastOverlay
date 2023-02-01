@@ -42,3 +42,32 @@ export const playersInfo = derived(updateState, ($update, set) => {
     });
 
 });
+
+export const teamShots = derived(playersInfo, ($update, set) => {
+    if (!$update) return;
+
+    let bShots = 0;
+    let oShots = 0;
+
+    for (const p of $update.blue) {
+        bShots = bShots + p.shots;
+    }
+
+    for (const p of $update.orange) {
+        oShots = oShots + p.shots;
+    }
+
+    set({
+        blue: bShots,
+        orange: oShots,
+    });
+
+});
+
+export const goalScored = derived(socketMessageStore, ($msg,set) => {
+    if (!$msg) return;
+
+    if ($msg.event === "game:goal_scored") {
+        set($msg.data);
+    }
+});
