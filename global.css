@@ -1,17 +1,33 @@
 :root {
     --team0-1:         hsl(212, 90%, 60%);
     --team0-2:         hsl(212, 90%, 45%);
+    --team0-3:         hsl(212, 90%, 38%);
 
-    --team1-1:          hsl(26, 93%, 60%);
-    --team1-2:          hsl(26, 85%, 48%);
+    --t0-hue: 212;
+    --t0-sat: 90%;
 
+    --team1-1:          hsl(26, 94%, 56%);
+    --team1-2:          hsl(26, 85%, 49%);
+    --team1-3:          hsl(26, 86%, 38%);
+
+    --t1-hue: 26;
+    --t1-sat: 94%;
 
     --bg-1:         hsl(222, 16%, 16%);
     --bg-2:         hsl(222, 16%, 14%);
     --bg-3:         hsl(222, 16%, 9%);
+    --bg-4:         hsl(222, 16%, 7%);
 
     --text-muted:   rgb(250 250 250 / 0.7);
 
     --box-shadow-right: 10px 0 5px -2px rgb(0 0 0 / 0.07);
-    --box-shadow-left:  -10px 0 5px -2px rgb(0 0 0 / 0.07)
+    --box-shadow-left:  -10px 0 5px -2px rgb(0 0 0 / 0.07);
+
+    --offWhite: rgb(250 250 250 / 1);
+
+    --text-sm: 18px;
+    --text-md: 23px;
+    --text-lg: 29px;
+    --text-xl: 38px;
+    --text-xxl: 50px;
 }

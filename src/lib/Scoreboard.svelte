@@ -33,6 +33,8 @@
                 const textEase = quadOut(t);
                 const opac = expoIn(t);
 
+                const team = goalScored.scorer.team_num === 0 ? "t0":"t1";
+
                 return `
                     clip-path: polygon(
                         ${(1+eased)*50}% 0%, ${(1-eased)*50}% 0%, ${(1-eased)*50}% 100%, ${(1+eased)*50}% 100%
@@ -41,8 +43,16 @@
                     rgb(101, 176, 241);
 
                     letter-spacing: ${60*textEase}px;
-                    background-color: hsl(${goalScored.scorer.team_num === 0 ? 208:26}, 90%, ${30*textEase+35}%);
+                    
                     color: rgba(250 250 250 / ${textEase2});
+
+                    background-color: hsl(
+                        var(--${team}-hue),
+                        var(--${team}-sat),
+                        ${30*textEase+35}%
+                    );
+
+                    // background-color: red;
 
                     opacity: ${Math.min(1,(1-opac)*3)};
                 `
@@ -202,11 +212,12 @@
     .shotsLabel {
         width: 80px;
         background-color: var(--bg-1);
-        font-size: 15px;
+        font-size: var(--text-sm);
         letter-spacing: 0.1em;
     }
 
     .shotCount {
+        font-size: var(--text-sm);
         width: 40px;
         background-color: var(--bg-2);
     }
@@ -215,7 +226,7 @@
         background-color: var(--bg-3);
         width: 100%;
         height: 30px;
-        font-size: 15px;
+        font-size: var(--text-sm);
         line-height: 30px;
         font-weight: 700;
         letter-spacing: 0.15rem;
@@ -230,7 +241,7 @@
         height: 100%;
         /* background-color: rgb(0 0 0 / 1); */
         line-height: 80px;
-        font-size: 28px;
+        font-size: var(--text-lg);
     }
 
     .scoreboard-container > * {
@@ -268,7 +279,7 @@
         width: 70px;
         height: 70px;
         line-height: 70px;
-        font-size: 50px;
+        font-size: var(--text-xxl);
     }
 
     .timeContainer {
@@ -276,7 +287,7 @@
         background-color: var(--bg-1);
         height: 70px;
         line-height: 75px;
-        font-size: 35px;
+        font-size: var(--text-xl);
         font-weight: 600;
     }
 

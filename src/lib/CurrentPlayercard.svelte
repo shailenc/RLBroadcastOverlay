@@ -40,7 +40,7 @@
         position: absolute;
         height: 30px;
         width: 870px;
-        background-color: hsl(195, 8%, 10%);
+        background-color: var(--bg-3);
         bottom: 0;
         left: 0;
 
@@ -56,7 +56,7 @@
 
     .container > * {
         line-height: 30px;
-        padding: 0 15px 0 15px;
+        padding: 0 10px 0 10px;
     }
 
     .container > .container {
@@ -65,22 +65,32 @@
 
     .label, .stat {
         font-weight: 600;
-        color: rgb(250 250 250 / 0.75);
-        font-size: 20px;
+        color: var(--text-muted);
+        font-size: var(--text-lg);
         line-height: 30px;
     }
 
     .label {
-        font-size: 13px;
-        color: rgb(250 250 250 / 0.5);
+        font-size: var(--text-sm);
+        color: var(--text-muted);
         width: 3rem;
+        /* text-align: right; */
+        padding: 0 0 0 10px;
+    }
+
+    .stat {
+        width: 1rem;
+        padding: 0 10px 0 0;
+        font-size: var(--text-md);
+        transform: translateY(-1px);
+        color: var(--offWhite);
     }
 
     .name {
         width: 200px;
-        background-color: rgba(36,39,46,1);
+        background-color: var(--bg-1);
         text-align: right;
-        font-size: 18px;
+        font-size: var(--text-md);
     }
 
 </style>
