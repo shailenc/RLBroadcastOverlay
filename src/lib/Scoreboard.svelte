@@ -166,7 +166,7 @@
     }
 
     .triangle {
-        background-color: rgba(27,30,37,1);
+        background-color: var(--bg-2);
         height: 25px;
         width: 35px;
     }
@@ -195,31 +195,31 @@
     .shots-container > * {
         height: 100%;
         font-weight: 600;
-        color: rgb(250 250 250 / 0.7);
+        color: var(--text-muted);
 
     }
 
     .shotsLabel {
         width: 80px;
-        background-color: rgba(27,30,37,1);
+        background-color: var(--bg-1);
         font-size: 15px;
         letter-spacing: 0.1em;
     }
 
     .shotCount {
         width: 40px;
-        background-color: rgba(20,23,30,1);
+        background-color: var(--bg-2);
     }
 
     .game-info-container {
-        background-color: rgb(23, 26, 27);
+        background-color: var(--bg-3);
         width: 100%;
         height: 30px;
         font-size: 15px;
         line-height: 30px;
         font-weight: 700;
         letter-spacing: 0.15rem;
-        color: rgb(250 250 250 / 0.3);
+        color: var(--text-muted);
     }
 
     .scoreboard-container {
@@ -241,38 +241,39 @@
         width: 300px;
         height: 100%;
         line-height: 70px;
+        z-index: -1;
     }
 
     .teamName.blue {
-        background-color: rgb(55, 153, 239); 
+        background-color: var(--team0-2); 
         border-radius: 3px 0 0 3px; 
     }
 
     .teamScore.blue {
-        background-color: rgb(101, 176, 241);
+        background-color: var(--team0-1);
+        box-shadow: var(--box-shadow-left);
     }
 
     .teamName.orange {
-        background-color: rgb(239, 135, 55);
+        background-color: var(--team1-2);
         border-radius: 0 3px 3px 0;
     }
 
     .teamScore.orange {
-        background-color: rgb(247, 165, 102);
+        background-color: var(--team1-1);
+        box-shadow: var(--box-shadow-right);
     }
 
     .teamScore {
         width: 70px;
         height: 70px;
         line-height: 70px;
-        background-color: blue; 
-        box-shadow: 0px 0px 8px 4px rgb(200 200 200 / 0.1);
         font-size: 50px;
     }
 
     .timeContainer {
         width: 160px;
-        background-color: rgba(36,39,46,1);
+        background-color: var(--bg-1);
         height: 70px;
         line-height: 75px;
         font-size: 35px;

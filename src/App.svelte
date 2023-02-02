@@ -12,7 +12,7 @@
 
 <main>
 
-    <h1>ooga</h1>
+    <!-- <h1>ooga</h1> -->
 
     <div class="swagbg"></div>
 
@@ -54,10 +54,8 @@
 <style>
     #playerCard {
         position: absolute;
-        width: 300px;
-        height: 325px;
-        left: 30px;
-        bottom: 40px;
+        left: 0;
+        bottom: 0;
     }
 
     #scoreboard {

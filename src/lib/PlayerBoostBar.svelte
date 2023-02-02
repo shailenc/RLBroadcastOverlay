@@ -35,12 +35,12 @@
 
     .container.target.blue {
         outline: 1px groove rgba(148, 146, 160, 0.15);
-        box-shadow: 10px 0px 0px 0px rgb(55, 153, 239);
+        box-shadow: 7px 0px 0px 0px rgb(55, 153, 239);
     }
 
     .container.target.orange {
         outline: 1px groove rgba(148, 146, 160, 0.15);
-        box-shadow: -10px 0px 0px 0px rgb(239, 135, 55);
+        box-shadow: -7px 0px 0px 0px rgb(239, 135, 55);
     }
 
     .boost {
@@ -62,8 +62,8 @@
         background-color: rgba(255, 102, 0, 0.7);
     }
 
-    .target .boost.fill {
-        background-color: rgb(250 250 250);
+    .target.blue .boost.fill, .target.orange .boost.fill {
+        background-color: rgb(250 250 250 / 1);
     }
 
     .boost.fill {
