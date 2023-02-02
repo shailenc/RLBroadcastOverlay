@@ -60,7 +60,7 @@
     }
 
     .container > .container {
-        padding: 0;
+        /* padding: 0; */
     }
 
     .label, .stat {
@@ -75,14 +75,14 @@
         color: var(--text-muted);
         width: 3rem;
         /* text-align: right; */
-        padding: 0 0 0 10px;
+        /* padding: 0 0 0 10px; */
     }
 
     .stat {
         width: 1rem;
-        padding: 0 10px 0 0;
+        /* padding: 0 10px 0 0; */
         font-size: var(--text-md);
-        transform: translateY(-1px);
+        transform: translateY(-3px);
         color: var(--offWhite);
     }
 
