@@ -95,8 +95,6 @@
         {#if goalScored?.scorer}
             {#key goalScored}
 
-                    <!-- dumb shit below -->
-
                     <div 
                         class="goal-scored-animation {goalScored.scorer.teamnum ? "blue" : "orange"}"
                         in:goalAnimation="{{duration: 1500}}"
@@ -128,9 +126,6 @@
                         >
                     </div>
         
-                    <!-- dumb shit above -->
-
-
                     <div 
                         class="goal-scored-animation {goalScored.scorer.teamnum ? "blue" : "orange"}"
                         in:goalAnimation="{{duration: 4500}}"

@@ -31,6 +31,8 @@
 
 </div>
 
+<!-- <TargetBoostMeter {boost} {team}/> -->
+
 
 <!--  -->
 
@@ -59,10 +61,6 @@
         padding: 0 10px 0 10px;
     }
 
-    .container > .container {
-        /* padding: 0; */
-    }
-
     .label, .stat {
         font-weight: 600;
         color: var(--text-muted);
@@ -73,7 +71,7 @@
     .label {
         font-size: var(--text-sm);
         color: var(--text-muted);
-        width: 3rem;
+        max-width: 5rem;
         /* text-align: right; */
         /* padding: 0 0 0 10px; */
     }
@@ -82,7 +80,7 @@
         width: 1rem;
         /* padding: 0 10px 0 0; */
         font-size: var(--text-md);
-        transform: translateY(-3px);
+        transform: translateY(-1px);
         color: var(--offWhite);
     }
 
