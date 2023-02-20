@@ -23,6 +23,7 @@
     export let goalScored;
 
     import { quadOut, expoInOut, expoIn, expoOut } from "svelte/easing";
+    import { text } from "svelte/internal";
 
     function goalAnimation(node, { duration }) {
         return {
@@ -42,7 +43,8 @@
 
                     rgb(101, 176, 241);
 
-                    letter-spacing: ${60*textEase}px;
+                    letter-spacing: ${3+120*textEase*textEase}px;
+                    text-indent: ${120*textEase*textEase}px;
                     
                     color: rgba(250 250 250 / ${textEase2});
 
@@ -66,12 +68,32 @@
 
 <div class="container">
 
+    {#if goalScored?.scorer}
+        {#key goalScored}
+
+            {#each [1500,2000,2500,3000,3500,4000] as delay}
+                <div 
+                    class="goal-scored-animation {goalScored.scorer.teamnum ? "blue" : "orange"}"
+                    in:goalAnimation="{{duration: delay}}"
+                    >
+                </div>
+            {/each}
+
+            <div 
+                class="goal-scored-animation {goalScored.scorer.teamnum ? "blue" : "orange"}"
+                in:goalAnimation="{{duration: 4500}}"
+            >
+                GOAL
+            </div>
+
+        {/key}
+    {/if}
+
     <div class="game-info-container">
         {gameInfo}
     </div>
 
     <div class="scoreboard-container">
-
         <div class="teamName blue">
             {game.teams[0].name}
         </div>
@@ -91,50 +113,6 @@
         <div class="teamName orange">
             {game.teams[1].name}
         </div>
-
-        {#if goalScored?.scorer}
-            {#key goalScored}
-
-                    <div 
-                        class="goal-scored-animation {goalScored.scorer.teamnum ? "blue" : "orange"}"
-                        in:goalAnimation="{{duration: 1500}}"
-                        >
-                    </div>
-        
-                    <div 
-                        class="goal-scored-animation {goalScored.scorer.teamnum ? "blue" : "orange"}"
-                        in:goalAnimation="{{duration: 2000}}"
-                        >
-                    </div>
-
-        
-                    <div 
-                        class="goal-scored-animation {goalScored.scorer.teamnum ? "blue" : "orange"}"
-                        in:goalAnimation="{{duration: 2500}}"
-                        >
-                    </div>
-        
-                    <div 
-                        class="goal-scored-animation {goalScored.scorer.teamnum ? "blue" : "orange"}"
-                        in:goalAnimation="{{duration: 3000}}"
-                        >
-                    </div>
-
-                    <div 
-                        class="goal-scored-animation {goalScored.scorer.teamnum ? "blue" : "orange"}"
-                        in:goalAnimation="{{duration: 3500}}"
-                        >
-                    </div>
-        
-                    <div 
-                        class="goal-scored-animation {goalScored.scorer.teamnum ? "blue" : "orange"}"
-                        in:goalAnimation="{{duration: 4500}}"
-                    >
-                        GOAL
-                    </div>
-
-            {/key}
-        {/if}
     </div>
 
     <div class="shots-container">
@@ -151,20 +129,13 @@
 
     .goal-scored-animation {
         position: absolute;
-        height: 102%;
-        line-height: 89%;
+        height: 100px;
+        line-height: 90px;
         width: 100%;
-        top: 5px;
-        /* bottom: 0; */
-        left: 0;
-        /* background-color: rgb(32, 37, 67); */
-        margin-top: 24px;
+        top: 0px;
+        
 
-        /* clip-path: polygon(
-            50% 0%, 50% 0%, 50% 100%, 50% 100%
-        ); */
-
-        font-size: 70px;
+        font-size: 90px;
         text-align: center;
         border-radius: 3px;
         color: rgb(250 250 250 / 0);
