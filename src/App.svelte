@@ -3,7 +3,6 @@
     import CurrentPlayercard from "./lib/CurrentPlayercard.svelte";
     import Scoreboard from "./lib/Scoreboard.svelte";
     import { targetPlayer, scoreboardInfo, playersInfo, teamShots, goalScored } from "./lib/processor";
-    import { socketMessageStore } from "./lib/socket";
     import PlayerBoostBar from "./lib/PlayerBoostBar.svelte";
 
     // $: console.log($socketMessageStore);
@@ -97,8 +96,8 @@
     }
 
     :global(*) {
-        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        font-weight: bold;
+        /* font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+        font-weight: lighter;
         text-transform: uppercase;
     }
 
@@ -111,6 +110,9 @@
         top: 0;
         /* background-image: url("https://pbs.twimg.com/ext_tw_video_thumb/1586753786042793987/pu/img/sBBwCOijoDCLRvqh.jpg"); */
         background-size: 100% 100%;
+        background-color: rgb(120 0 0 / 0);
+
+        display: none;
     }
 
 </style>
