@@ -69,5 +69,37 @@ export const goalScored = derived(socketMessageStore, ($msg,set) => {
 
     if ($msg.event === "game:goal_scored") {
         set($msg.data);
+    } else if ($msg.event === "game:replay_end") {
+        set({});
     }
 });
+
+export const currentScene = derived(socketMessageStore, ($msg, set) => {
+    if ( !$msg ) return;
+
+    switch ($msg.event) {
+        case "game:initialized":
+            set("pregame");
+            break;
+
+        case "game:pre_countdown_begin":
+            set("gameplay");
+            break;
+
+        case "game:replay_start":
+            set("replay");
+            break;
+
+        case "game:replay_end":
+            set("gameplay");
+            break;
+            
+        case "game:match_ended":
+            set("end");
+            break;
+
+        case "game:podium_start":
+            set("podium");
+            break;
+    }
+})

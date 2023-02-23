@@ -23,7 +23,6 @@
     export let goalScored;
 
     import { quadOut, expoInOut, expoIn, expoOut } from "svelte/easing";
-    import { text } from "svelte/internal";
 
     function goalAnimation(node, { duration }) {
         return {
@@ -53,8 +52,6 @@
                         var(--${team}-sat),
                         ${30*textEase+35}%
                     );
-
-                    // background-color: red;
 
                     opacity: ${Math.min(1,(1-opac)*3)};
                 `

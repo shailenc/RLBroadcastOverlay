@@ -1,35 +1,28 @@
 <script>
-    import Scoreboard from "./lib/Scoreboard.svelte";
-    import { targetPlayer, scoreboardInfo, playersInfo, teamShots, goalScored } from "./lib/processor";
-    import UpperTeamBoostBars from "./lib/UpperTeamBoostBars.svelte";
-    import TargetPlayerInfo from "./lib/TargetPlayerInfo.svelte";
-    // $: console.log($socketMessageStore);
-    // $: console.log($playersInfo);
+    import { currentScene } from "./lib/processor";
+    import Pregame from "./lib/Pregame.svelte";
+    import MatchPlay from "./lib/MatchPlay.svelte";
+    import GoalReplay from "./lib/GoalReplay.svelte";
+    import MatchEnd from "./lib/MatchEnd.svelte";
+
+    const scenes = {
+        "pregame":  Pregame,
+        "gameplay": MatchPlay,
+        "replay":   GoalReplay,
+        "end":      MatchEnd,
+    };
+
 </script>
 
 <main>
 
     <div class="swagbg"></div>
 
-    <!-- Target player info; bottom bar, boost circle on right -->
-    {#if $targetPlayer?.name}
-        <div style="position:absolute; left: 0; bottom: 0">
-            <TargetPlayerInfo player={$targetPlayer} />
-        </div>
-    {/if}
+    <p style="position: absolute; top: 0px; left: 0px; font-size:90px; height: 1080px; width: 1920px; text-align:center; line-height: 1080px; margin: 0 0 0 0; opacity: 0.04;">&#60; {$currentScene} &#62;</p>
 
-    
-    <!-- Scoreboard -->
-    {#if $scoreboardInfo}
-    <div style="position: absolute; width: 900px; height: 70px; top: 0px; left: 510px;">
-        <Scoreboard game={$scoreboardInfo} teamShots={$teamShots} goalScored={$goalScored}/>
-    </div>
-    {/if}
-
-    <!-- All individual player boost cards at top left/right -->
-    <div style="position: absolute; top: 5px; left: 0; width: 1920px; height: 135px;">
-        <UpperTeamBoostBars playersInfo={$playersInfo} targetPlayer={$targetPlayer}/>
-    </div>
+    <svelte:component 
+        this={scenes[$currentScene]}
+    />
 
 </main>
 
