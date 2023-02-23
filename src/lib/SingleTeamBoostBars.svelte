@@ -1,5 +1,6 @@
 <script>
     import PlayerBoostBar from "./PlayerBoostBar.svelte";
+    import { fly } from 'svelte/transition';
 
     export let team;
     export let players;
@@ -10,9 +11,9 @@
 
 {#if players?.length > 0}
     <div class="teamblock" style="{side}: 5px; text-align: {side};">
-        {#each players as player}
+        {#each players as player, n}
             
-                <div class="playerslide">
+                <div class="playerslide" in:fly="{{ x:(team=="blue" ? -350 : 350), duration: 400, delay: 700+100*n, opacity: 0.5 }}">
                     <PlayerBoostBar {team} boost={player.boost} name={player.name} isTarget={player.id == targetPlayer.id}/>
                 </div>
 

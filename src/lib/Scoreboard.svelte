@@ -59,12 +59,15 @@
         }
     }
 
+    import { slide, fly} from "svelte/transition";
+
     // $:  console.log(goalScored);
 
 </script>
 
 <div class="container">
 
+    <!-- "GOAL" animation over scoreboard  -->
     {#if goalScored?.scorer}
         {#key goalScored}
 
@@ -86,33 +89,59 @@
         {/key}
     {/if}
 
-    <div class="game-info-container">
+    <div class="game-info-container"
+        in:fly="{{ y:-100, duration: 300, delay: 300, opacity: 1 }}"
+    >
         {gameInfo}
     </div>
 
-    <div class="scoreboard-container">
-        <div class="teamName blue">
-            {game.teams[0].name}
+    <div class="scoreboard-container"
+        in:fly="{{ y:-200, duration: 150, delay: 500, opacity: 1 }}"
+    >
+
+        <div class="blueTeam" style="overflow:hidden; position: relative; height: 100%; display: flex;">
+
+            <div class="teamName blue"
+                style="z-index: -4;"
+                in:fly="{{ x:370, duration: 400, delay: 775, opacity: 0 }}"
+            >
+                {game.teams[0].name}
+            </div>
+        
+            <div class="teamScore blue"
+                style="z-index: -3;"
+                in:fly="{{ x:70, duration: 200, delay: 700, opacity: 0.5 }}"
+            >
+                {game.teams[0].score}
+            </div>
+
         </div>
-    
-        <div class="teamScore blue">
-            {game.teams[0].score}
-        </div>
-    
-        <div class="timeContainer">
-            {Math.floor(game.time_seconds/60)}:{getSecs(game.time_seconds)}
-        </div>
-    
-        <div class="teamScore orange">
-            {game.teams[1].score}
-        </div>
-    
-        <div class="teamName orange">
-            {game.teams[1].name}
+        
+        <div class="orangeTeam" style="overflow:hidden; position: relative; height: 100%; display: flex;">
+            <div class="timeContainer" style="z-index: -2;">
+                {Math.floor(game.time_seconds/60)}:{getSecs(game.time_seconds)}
+            </div>
+        
+            <div class="teamScore orange"
+                style="z-index: -3;"
+                in:fly="{{ x:-70, duration: 200, delay: 700, opacity: 0.5 }}"
+            >
+                {game.teams[1].score} 
+            </div>
+        
+            <div class="teamName orange"
+                style="z-index: -4;"
+                in:fly="{{ x:-370, duration: 400, delay: 775, opacity: 0 }}"
+            >
+                {game.teams[1].name}
+            </div>
         </div>
     </div>
 
-    <div class="shots-container">
+    <div class="shots-container" 
+        in:fly="{{ y:-25, duration: 200, delay: 1050, opacity: 0 }}"
+        style="z-index:-5;"
+    >
         <div class="triangle triangle-left"></div>
         <div class="shotCount blue">{teamShots.blue}</div>
         <div class="shotsLabel">SHOTS</div>
@@ -123,7 +152,7 @@
 </div>
 
 <style>
-
+    
     .goal-scored-animation {
         position: absolute;
         height: 100px;
@@ -163,6 +192,7 @@
         
         height: 25px;
         line-height: 25px;
+        position: relative;
     }
 
     .shots-container > * {
@@ -191,7 +221,7 @@
         height: 30px;
         font-size: var(--text-sm);
         line-height: 30px;
-        font-weight: 700;
+        font-weight: 500;
         letter-spacing: 0.15rem;
         color: var(--text-muted);
     }
