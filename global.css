@@ -13,6 +13,10 @@
     --t1-hue: 26;
     --t1-sat: 94%;
 
+    /* arbitrary filler values here
+    --sb-goal-hue: 0;
+    --sb-goal-sat: 0%;  */
+
     --bg-1:         hsl(222, 16%, 16%);
     --bg-2:         hsl(222, 16%, 14%);
     --bg-3:         hsl(222, 16%, 9%);

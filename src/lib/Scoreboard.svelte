@@ -25,6 +25,7 @@
     import { quadOut, expoInOut, expoIn, expoOut } from "svelte/easing";
 
     function goalAnimation(node, { duration }) {
+
         return {
             duration,
             css: t => {
@@ -32,8 +33,6 @@
                 const textEase2 = expoOut(t);
                 const textEase = quadOut(t);
                 const opac = expoIn(t);
-
-                const team = goalScored.scorer.team_num === 0 ? "t0":"t1";
 
                 return `
                     clip-path: polygon(
@@ -47,11 +46,7 @@
                     
                     color: rgba(250 250 250 / ${textEase2});
 
-                    background-color: hsl(
-                        var(--${team}-hue),
-                        var(--${team}-sat),
-                        ${30*textEase+35}%
-                    );
+                    filter: brightness(${30*textEase+80}%);
 
                     opacity: ${Math.min(1,(1-opac)*3)};
                 `
@@ -59,7 +54,7 @@
         }
     }
 
-    import { slide, fly} from "svelte/transition";
+    import {fly} from "svelte/transition";
 
     // $:  console.log(goalScored);
 
@@ -73,14 +68,14 @@
 
             {#each [1500,2000,2500,3000,3500,4000] as delay}
                 <div 
-                    class="goal-scored-animation {goalScored.scorer.teamnum ? "blue" : "orange"}"
+                    class="goal-scored-animation {goalScored.scorer.teamnum ? "orange" : "blue"}"
                     in:goalAnimation="{{duration: delay}}"
                     >
                 </div>
             {/each}
 
             <div 
-                class="goal-scored-animation {goalScored.scorer.teamnum ? "blue" : "orange"}"
+                class="goal-scored-animation {goalScored.scorer.teamnum ? "orange" : "blue"}"
                 in:goalAnimation="{{duration: 4500}}"
             >
                 GOAL
@@ -165,6 +160,14 @@
         text-align: center;
         border-radius: 3px;
         color: rgb(250 250 250 / 0);
+    }
+
+    .goal-scored-animation.blue {
+        background-color: var(--team0-2);
+    }
+
+    .goal-scored-animation.orange {
+        background-color: var(--team1-2);
     }
 
     .triangle {

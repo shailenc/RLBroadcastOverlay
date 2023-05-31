@@ -5,7 +5,7 @@
 </script>
 
 
-<div class="container main">
+<div class="container main team{player.team ? '1':'0'}">
     
     <div class="name">
         {player.name}
@@ -45,10 +45,18 @@
         background-color: var(--bg-3);
         bottom: 0;
         left: 0;
-
         clip-path: polygon(
             100% 100%, 0% 100%, 0% 0%, 95% 0%
         );
+    }
+
+    .container.main.team0 {
+        border-left: 10px solid var(--team0-1);
+
+    }
+
+    .container.main.team1 {
+        border-left: 10px solid var(--team1-1);
     }
 
     .container {
