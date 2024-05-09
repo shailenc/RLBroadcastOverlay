@@ -7,7 +7,7 @@
         ]
     };
 
-    export let gameInfo = "shidleague winter major  |  semifinals";
+    export let gameInfo = "scrimmage league winter major  |  semifinals";
 
     function getSecs(num) {
         num = num % 60;

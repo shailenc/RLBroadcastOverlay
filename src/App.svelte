@@ -16,9 +16,9 @@
 
 <main>
 
-    <div class="swagbg"></div>
-
-    <p style="position: absolute; top: 0px; left: 0px; font-size:90px; height: 1080px; width: 1920px; text-align:center; line-height: 1080px; margin: 0 0 0 0; opacity: 0.04;">&#60; {$currentScene} &#62;</p>
+  <!-- For test/debugging scene switching, uncomment the styling for test background below as well -->
+    <!-- <div class="test-bg"></div>
+    <p style="position: absolute; top: 0px; left: 0px; font-size:90px; height: 1080px; width: 1920px; text-align:center; line-height: 1080px; margin: 0 0 0 0; opacity: 0.04;">&#60; {$currentScene} &#62;</p> -->
 
     <svelte:component 
         this={scenes[$currentScene]}
@@ -28,18 +28,18 @@
 
 <style>
 
-    .swagbg {
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        z-index: -10;
-        left: 0;
-        top: 0;
-        /* background-image: url("https://pbs.twimg.com/ext_tw_video_thumb/1586753786042793987/pu/img/sBBwCOijoDCLRvqh.jpg"); */
-        background-size: 100% 100%;
-        background-color: rgb(120 0 0 / 0);
+  /* .test-bg {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: -10;
+    left: 0;
+    top: 0;
+    background-image: url("https://pbs.twimg.com/ext_tw_video_thumb/1586753786042793987/pu/img/sBBwCOijoDCLRvqh.jpg");
+    background-size: 100% 100%;
+    background-color: rgb(120 0 0 / 0);
 
-        display: none;
-    }
+    display: none;
+  } */
 
 </style>

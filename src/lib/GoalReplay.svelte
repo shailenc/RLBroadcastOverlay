@@ -1,7 +1,7 @@
 <script>
     import { goalScored } from "./processor";
 
-    $: console.log("SHIDSHISHID:",$goalScored);
+    $: console.log("GOALSCORED:",$goalScored);
 
     import { fly } from 'svelte/transition';
 
@@ -39,6 +39,8 @@
         background-color: var(--bg-1);
         width: 510px;
         height: 200px;
+
+        border-radius: 20px;
     }
 
     .top {

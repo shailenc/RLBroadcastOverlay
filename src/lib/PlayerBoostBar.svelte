@@ -1,7 +1,7 @@
 <script>
 
     export let boost = 80;
-    export let name = "geoff monkey333";
+    export let name = "samplename";
     export let isTarget = false;
     export let team;
   
