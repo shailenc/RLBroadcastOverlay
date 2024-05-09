@@ -11,7 +11,7 @@ Built to be used with BakkesMod (for RocketLeague) with the SOS Relay plugin ins
 - Player-specific data adaptive to on the current player shown on screen
 
 ### Video demo
-[https://youtu.be/54W0fhjt8bc](url)
+[video demo (youtube)](https://youtu.be/54W0fhjt8bc)
 
 ### Screenshots
 ![orangeTeamDemoSS](https://github.com/shailenc/RLBroadcastOverlay/assets/29323126/d48de8e6-cfb7-4074-9d78-c449bdbfa1ad)
